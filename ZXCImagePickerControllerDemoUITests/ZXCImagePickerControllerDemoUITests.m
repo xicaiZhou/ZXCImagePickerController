@@ -1,18 +1,18 @@
 //
-//  ZXCCameraUITests.m
-//  ZXCCameraUITests
+//  ZXCImagePickerControllerDemoUITests.m
+//  ZXCImagePickerControllerDemoUITests
 //
-//  Created by 周希财 on 2017/11/29.
+//  Created by 周希财 on 2017/12/5.
 //  Copyright © 2017年 VIC. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface ZXCCameraUITests : XCTestCase
+@interface ZXCImagePickerControllerDemoUITests : XCTestCase
 
 @end
 
-@implementation ZXCCameraUITests
+@implementation ZXCImagePickerControllerDemoUITests
 
 - (void)setUp {
     [super setUp];

@@ -1,13 +1,13 @@
 //
 //  AppDelegate.m
-//  ZXCCamera
+//  ZXCImagePickerControllerDemo
 //
-//  Created by 周希财 on 2017/11/29.
+//  Created by 周希财 on 2017/12/5.
 //  Copyright © 2017年 VIC. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "ZXCImagePickerController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,10 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    ZXCImagePickerController *m = [[ZXCImagePickerController alloc] init];
-//    self.window.rootViewController = m;
-//    [self.window makeKeyAndVisible];
+    // Override point for customization after application launch.
     return YES;
 }
 
