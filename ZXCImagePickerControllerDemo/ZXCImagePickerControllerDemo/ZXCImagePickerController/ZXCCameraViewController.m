@@ -177,7 +177,7 @@
     if ([_device lockForConfiguration:nil]) {
         if ([_device isFlashModeSupported:AVCaptureFlashModeAuto]) {
             _device.flashMode = AVCaptureFlashModeOff;
-            [_device setTorchMode:AVCaptureFlashModeOff];
+            [_device setTorchMode:AVCaptureTorchModeOff];
 //            [_device setFlashMode:AVCaptureFlashModeAuto];
 //            [_device setTorchMode:AVCaptureFlashModeAuto];
         }
@@ -202,7 +202,7 @@
                [_flashButton setImage:[UIImage imageNamed:@"images.bundle/flash"] forState: UIControlStateNormal];
         } else if (_device.flashMode == AVCaptureFlashModeOn) {
             _device.flashMode = AVCaptureFlashModeOff;
-            [_device setTorchMode:AVCaptureFlashModeOff];
+            [_device setTorchMode:AVCaptureTorchModeOff];
             [_flashButton setImage:[UIImage imageNamed:@"images.bundle/flash_off"] forState:UIControlStateNormal];
 //            _device.flashMode = AVCaptureFlashModeAuto;
 //            [_device setTorchMode:AVCaptureFlashModeAuto];
