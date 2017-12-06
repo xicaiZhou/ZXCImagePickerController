@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol ZXCImagePickerControllerDelegate
+@protocol ZXCImagePickerControllerDelegate <NSObject>
+
 -(void)ZXCImagePickerWithPhoto:(UIImage *)image;
 @end
 
@@ -18,5 +19,5 @@ typedef NS_ENUM(NSUInteger, ZXCImagePickerType) {
 
 @interface ZXCImagePickerController : UIViewController
 @property (nonatomic, assign) ZXCImagePickerType Type;
-@property (nonatomic, weak) id<ZXCImagePickerControllerDelegate> delegate;
+@property (nonatomic, assign) id<ZXCImagePickerControllerDelegate> delegate;
 @end

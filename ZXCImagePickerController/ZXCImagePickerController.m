@@ -25,7 +25,7 @@
         camera.delegate = self;
         [self addChildViewController:camera];
         [self.view addSubview:camera.view];
-
+        
     }else{
         UINavigationController *album = [[UINavigationController alloc] initWithRootViewController:[[ZXCAlbumViewController alloc] init]];
         [self addChildViewController:album];
@@ -34,11 +34,17 @@
 }
 -(void)cameraPhoto:(UIImage *)image{
     
-    [self.delegate ZXCImagePickerWithPhoto:image];
+    if ([self.delegate respondsToSelector:@selector(ZXCImagePickerWithPhoto:)]) {
+        [self.delegate ZXCImagePickerWithPhoto:image];
+        
+    }
 }
 -(void)albumPhoto:(NSNotification *)notification{
     UIImage *image = (UIImage *)notification.object[@"image"];
-     [self.delegate ZXCImagePickerWithPhoto:image];
+    
+    if ([self.delegate respondsToSelector:@selector(ZXCImagePickerWithPhoto:)]) {
+        [self.delegate ZXCImagePickerWithPhoto:image];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,3 +56,4 @@
     
 }
 @end
+

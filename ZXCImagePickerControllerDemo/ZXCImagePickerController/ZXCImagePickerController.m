@@ -34,11 +34,17 @@
 }
 -(void)cameraPhoto:(UIImage *)image{
     
-    [self.delegate ZXCImagePickerWithPhoto:image];
+    if ([self.delegate respondsToSelector:@selector(ZXCImagePickerWithPhoto:)]) {
+        [self.delegate ZXCImagePickerWithPhoto:image];
+
+    }
 }
 -(void)albumPhoto:(NSNotification *)notification{
     UIImage *image = (UIImage *)notification.object[@"image"];
-     [self.delegate ZXCImagePickerWithPhoto:image];
+    
+    if ([self.delegate respondsToSelector:@selector(ZXCImagePickerWithPhoto:)]) {
+        [self.delegate ZXCImagePickerWithPhoto:image];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
