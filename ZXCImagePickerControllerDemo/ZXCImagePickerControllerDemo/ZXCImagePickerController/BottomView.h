@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^TurnBlock)();
-typedef void(^SavePhotoBlock)();
+
 
 @interface BottomView : UIView
-@property (nonatomic, copy) SavePhotoBlock block;
-@property (nonatomic, copy) TurnBlock turnblock;
-
+@property (nonatomic, strong) UIButton *left;
+@property (nonatomic, strong) UIButton *right;
 @end

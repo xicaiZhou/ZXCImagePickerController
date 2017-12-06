@@ -11,6 +11,6 @@
 
 @interface ZXCAssetCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *imageV;
-@property (nonatomic, strong) PHAsset *asset;
+@property (nonatomic, strong) id asset;
 
 @end
