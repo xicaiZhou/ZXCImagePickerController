@@ -15,6 +15,6 @@
 @property (nonatomic, strong) id result;             
 
 @property (nonatomic, strong) NSArray *models;
-@property (nonatomic, strong) PHAsset *firstAsset;
+@property (nonatomic, strong) id firstAsset;
 
 @end

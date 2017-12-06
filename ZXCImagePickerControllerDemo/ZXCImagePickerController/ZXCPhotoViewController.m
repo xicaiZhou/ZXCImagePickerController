@@ -36,17 +36,9 @@
     
     _bottomView = [[BottomView alloc] initWithFrame:CGRectMake(0, kScreenHeight , kScreenWidth, 60)];
     _bottomView.transform = CGAffineTransformMakeTranslation(0, -60);
-    __block typeof(self)bself = self;
-    bself.bottomView.block = ^{
-        [self dismissViewControllerAnimated:YES completion:nil];
-        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-        NSDictionary *dic = [NSDictionary dictionaryWithObject:self.photo forKey:@"image"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"albumPhoto" object:dic];
-    };
-    bself.bottomView.turnblock = ^{
-        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-        [self.navigationController popViewControllerAnimated:YES];
-    };
+     [_bottomView.left addTarget:self action:@selector(turn) forControlEvents:UIControlEventTouchUpInside];
+    [_bottomView.right addTarget:self action:@selector(save) forControlEvents:UIControlEventTouchUpInside];
+   
     [self.view addSubview:_bottomView];
     [[PHImageManager defaultManager] requestImageDataForAsset:self.asset options:nil resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -57,6 +49,16 @@
         });
     }];
 
+}
+- (void)save{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:self.photo forKey:@"image"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"albumPhoto" object:dic];
+}
+-(void)turn{
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {

@@ -5,6 +5,11 @@
 //  Created by 周希财 on 2017/11/29.
 //  Copyright © 2017年 Renford. All rights reserved.
 //
+
+#define iOS7Later ([UIDevice currentDevice].systemVersion.floatValue >= 7.0f)
+#define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
+#define iOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
+#define iOS9_1Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.1f)
 #define kScreenBounds   [UIScreen mainScreen].bounds
 #define kScreenWidth  kScreenBounds.size.width*1.0
 #define kScreenHeight kScreenBounds.size.height*1.0
@@ -177,7 +182,7 @@
     if ([_device lockForConfiguration:nil]) {
         if ([_device isFlashModeSupported:AVCaptureFlashModeAuto]) {
             _device.flashMode = AVCaptureFlashModeOff;
-            [_device setTorchMode:AVCaptureFlashModeOff];
+            [_device setTorchMode:AVCaptureTorchModeOff];
 //            [_device setFlashMode:AVCaptureFlashModeAuto];
 //            [_device setTorchMode:AVCaptureFlashModeAuto];
         }
@@ -202,7 +207,7 @@
                [_flashButton setImage:[UIImage imageNamed:@"images.bundle/flash"] forState: UIControlStateNormal];
         } else if (_device.flashMode == AVCaptureFlashModeOn) {
             _device.flashMode = AVCaptureFlashModeOff;
-            [_device setTorchMode:AVCaptureFlashModeOff];
+            [_device setTorchMode:AVCaptureTorchModeOff];
             [_flashButton setImage:[UIImage imageNamed:@"images.bundle/flash_off"] forState:UIControlStateNormal];
 //            _device.flashMode = AVCaptureFlashModeAuto;
 //            [_device setTorchMode:AVCaptureFlashModeAuto];
