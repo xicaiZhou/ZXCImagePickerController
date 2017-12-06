@@ -12,7 +12,6 @@
 
 #import "ZXCImageManager.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-//#import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 #import "ZXCAlbumModel.h"
 @interface ZXCImageManager()
