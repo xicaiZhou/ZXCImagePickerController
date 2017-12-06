@@ -20,9 +20,9 @@
 ```
 代理回调方法
 ```
-@protocol ZXCImagePickerControllerDelegate <NSObject>
--(void)ZXCImagePickerWithPhoto:(UIImage *)image;
-@end
+     @protocol ZXCImagePickerControllerDelegate <NSObject>
+     -(void)ZXCImagePickerWithPhoto:(UIImage *)image;
+     @end
 ```
 集成注意事项
 1.获取权限
