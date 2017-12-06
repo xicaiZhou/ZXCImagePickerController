@@ -1,5 +1,5 @@
 # ZXCImagePickerController
-自定义相机、自定义相册、图片选择器\n还在使用UIImagePickerController吗？还在填坑吗？那么新手福利来了。教你如何编写属于自己的ImagePickerController。
+>自定义相机、自定义相册、图片选择器<br>还在使用UIImagePickerController吗？还在填坑吗？那么新手福利来了。教你如何编写属于自己的ImagePickerController。
 >目前，ZXCImagePickerController版本为1.0.5，2.0版本正在拼命加载中。
 
 集成方法
