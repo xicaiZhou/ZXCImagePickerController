@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
   s.author        = { "ZXC" => "zhouxicaijob@163.com" }
   s.ios.deployment_target   = "8.0"
   s.source        = { :git => "https://github.com/xicaiZhou/ZXCImagePickerController.git", :tag => "v#{s.version}" }
-  s.resources    = "ZXCImagePickerController/ZXCImagePickerController/*.{png,bundle}"
-  s.source_files  = "ZXCImagePickerController/ZXCImagePickerController/*.{h,m}"
+  s.resources    = "ZXCImagePickerController/*.{png,bundle}"
+  s.source_files  = "ZXCImagePickerController/*.{h,m}"
   s.requires_arc  = true
   s.framework     = "UIKit","Photos"
 end
