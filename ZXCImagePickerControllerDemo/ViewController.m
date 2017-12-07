@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ZXCCameraViewController.h"
-#import "ZXCAlbumViewController.h"
-#import "ZXCPhotoViewController.h"
+
 #import "ZXCImagePickerController.h"
 @interface ViewController ()<ZXCImagePickerControllerDelegate>
 @property (nonatomic, strong) UIImageView *imageView;
